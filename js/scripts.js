@@ -50,18 +50,56 @@ window.onload = function() {
             alert("Something not entered correctly");
           }
         }
+        //add answers to key
         let lKey = (langPref(aq1)+langPref(aq2)+langPref(aq3)+langPref(aq4)+langPref(aq5));
-        function keyDecoder(lKey) {
-          if(lKey=== 10) {
-            lKey === 
+        
+        // declare function to take apart key and output final answer
+        function keyStrip(lKey) {
+          sKey = lKey.toString();
+          pY = sKey.slice(-1);
+          jS = sKey.slice(-2);
+          cS = sKey.slice(-3);
+        //declare function to get final answer    
+        function keyDecoder(pY, jS, cS){
+            if(pY > 3){
+              return "Python, very confident";
+            }
+            else if(pY > 2){
+              return "Python, fairly confident";
+            }
+            else if (cS > 2){
+              return "C#, very confident";
+            }
+            else if (jS > 2){
+              return "JavaScript, very confident";
+            }
+            else if (pY > 1){
+              return "Geez I don't know, probably whatever ¯\_(ツ)_/¯";
+            }
+            else if (cS > 1){
+              return "You are going to have to figure it out for yourself";
+            }
+            else if (jS > 1){
+              return "JavaScript might work for you, but so would a nice vacation";
+            }
+            else ( > 2){
+              return "No. Idea. ¯\_(ツ)_/¯";
           }
-
-
-
         }
+        keyStrip(lKey)
+        document.querySelector("p").innerText = keyDecoder();
+        keyStrip(lKey);
+        // function keyDecoder(lKey) {
+        //   if(lKey=== 10) {
+        //     lKey === 
+        //   }
+
+
+
+        // }
           
 
-        document.querySelector("p").innerText = aq2;
+        
       
   };
 }  
