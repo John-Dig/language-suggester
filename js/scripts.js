@@ -5,59 +5,64 @@ window.onload = function() {
   //runs on submission
   form.onsubmit = function(e) {
     e.preventDefault();
-    //console.log("submitted, and " + document.getElementById("q5").value);
-   
+  //put answers into string variables
      aq1 =document.getElementById("q1").value;
      aq2 =document.getElementById("q2").value;
      aq3 =document.getElementById("q3").value;
      aq4 =document.getElementById("q4").value;
      aq5 =document.getElementById("q5").value;
+     console.log("here");
 
-
-     //calculate language preference
-    
-
-     
-     
-
-      let langPref = function(aq) {
-        let result = 0;
+     //declare function for key for final l output
+      function langPref(aq) {
         
           if (aq === "Math") {
-            result = 1;
+            return 1;
           }
           if (aq === "Verbal") {
-            result = 10;
-            
+            return 10;
           }
           if(aq === "I sure do") {
-            result = 10;
+            return 10;
           }
           if(aq === "No, that's annoying") {
-            result = 100;
-
+            return 100;
           }   
-          console.log(result);
+          if(aq === "I love the guy, he's a saint") {
+            return 100;
+          }
+          if(aq === "I hate him, he's the devil") {
+            return 1;
+          }
+          if(aq === "Build a bridge with sticks and nature to cross a ravine"){
+            return 1;
+          }
+          if(aq ==="Act your way free with cunning and charisma"){
+            return 10;
+          }
+          if(aq ==="Yes"){
+            return 1;
+          }
+          if(aq ==="No"){
+            return 100;
+          }
+          else {
+            alert("Something not entered correctly");
+          }
         }
-
-        let lan1 = langPref(aq1);
-        let lan2 = langPref(aq2);
-        let lan3 = langPref(aq3);
-        let lan4 = langPref(aq4);
-        let lan5 = langPref(aq5);
-        let lanFinal = lan1 + lan2 + lan3 + lan4 + lan5;
-        console.log (lanFinal);
-        console.log(lan1, lan2);
+        let lKey = (langPref(aq1)+langPref(aq2)+langPref(aq3)+langPref(aq4)+langPref(aq5));
+        function keyDecoder(lKey) {
+          if(lKey=== 10) {
+            lKey === 
+          }
 
 
 
+        }
+          
 
-        // let language = langPref(aq1) + langPref(aq2);
-        // console.log(language);
-
-      }
+        document.querySelector("p").innerText = aq2;
       
   };
-
+}  
 //business logic
-
