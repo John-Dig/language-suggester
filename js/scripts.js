@@ -1,4 +1,4 @@
-
+let aKey = [];
 //
 window.onload = function() {
   let form = document.querySelector("form");
@@ -52,20 +52,20 @@ window.onload = function() {
       let nKey = (intoKeys(aq1)+intoKeys(aq2)+intoKeys(aq3)+intoKeys(aq4)+intoKeys(aq5));
       //nKey to sKey
       let sKey = nKey.toString();
-      console.log(sKey);
       // declare and call function to split string into 3 language scoring variables
-      keyStrip(sKey);
+      
      console.log("here is skey: " +sKey);
-      function keyStrip(sKey) {
-        const aKey = [sKey.slice(-1), sKey.slice(-2), sKey.slice(-3)]
-        return aKey;
+      function keyStrip(theKey) {
+        return aKey= [theKey.slice(2), theKey.slice(1,2), theKey.slice(0,1)];
       }
+      keyStrip(sKey);
       console.log(aKey);
       //declare function to use key to get final string
 
 
-      function keyDecoder(a,b,c){
-          if(pY > 3){
+      function keyDecoder(cS,jS,pY){
+        console.log("cS: "+ cS + "  jS: " +jS +"  pY: "+pY);  
+        if(pY > 3){
             return "Python, very confident";
           }
           else if(pY > 2){
@@ -78,7 +78,7 @@ window.onload = function() {
             return "JavaScript, very confident";
           }
           else if (pY > 1){
-            return "Geez I don't know, probably whatever ¯\_(ツ)_/¯";
+            return "Python, maybe, but you are well rounded";
           }
           else if (cS > 1){
             return "You are going to have to figure it out for yourself";
@@ -89,9 +89,9 @@ window.onload = function() {
           else {
             return "No. Idea. ¯\_(ツ)_/¯";
         }
-      }
-      keyDecoder(pY,jS,cS);  
+     }
+   
     
-  document.querySelector("p").innerText =keyDecoder(1,3,1); //(keystrip(sKey));
+  document.querySelector("p").innerText =keyDecoder(aKey[2],aKey[1],aKey[0]); //(keystrip(sKey));
   }
 }
