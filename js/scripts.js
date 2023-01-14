@@ -53,18 +53,18 @@ window.onload = function() {
       //nKey to sKey
       let sKey = nKey.toString();
       console.log(sKey);
-      // declare function to split string into 3 language scoring variables
+      // declare and call function to split string into 3 language scoring variables
       keyStrip(sKey);
-      console.log (pY);
+     console.log("here is skey: " +sKey);
       function keyStrip(sKey) {
-        pY = sKey.slice(-1);
-        jS = sKey.slice(-2);
-        cS = sKey.slice(-3);
-        
+        const aKey = [sKey.slice(-1), sKey.slice(-2), sKey.slice(-3)]
+        return aKey;
+      }
+      console.log(aKey);
       //declare function to use key to get final string
-      
-      console.log("python: " +pY);
-      function keyDecoder(pY, jS, cS){
+
+
+      function keyDecoder(a,b,c){
           if(pY > 3){
             return "Python, very confident";
           }
@@ -91,7 +91,6 @@ window.onload = function() {
         }
       }
       keyDecoder(pY,jS,cS);  
-    };
     
   document.querySelector("p").innerText =keyDecoder(1,3,1); //(keystrip(sKey));
   }
