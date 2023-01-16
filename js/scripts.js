@@ -1,16 +1,18 @@
 let aKey = [];
 //
-window.onload = function() {
-  let form = document.querySelector("form");
-  //runs on submission
-  form.onsubmit = function(e) {
-    e.preventDefault();
+let sButton = document.querySelector("button");
+sButton.addEventListener("click", function(e) {
+      e.preventDefault();
     //put answers into string variables
+    let function = answersToVariables() {
     aq1 =document.getElementById("q1").value;
     aq2 =document.getElementById("q2").value;
     aq3 =document.getElementById("q3").value;
     aq4 =document.getElementById("q4").value;
     aq5 =document.getElementById("q5").value;
+    }
+
+    answersToVariables();
 
     //declare function to input answers to key
     function intoKeys(aq) {
@@ -72,9 +74,9 @@ window.onload = function() {
         let nTotal = cSN + jSN + pYN;
         console.log (nTotal);
         console.log (jS);
-
+        // first if is to make sure all 5 questions were answered
         if(pY.length > 5 ){
-          return "Please select an answer for each question, or I can't tell you squat!"
+          return "Please go back and make sure you've answered each question."
         }
         
           else if(pY > 3){
