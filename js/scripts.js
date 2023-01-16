@@ -45,7 +45,7 @@ window.onload = function() {
         return 100;
       }
       else {
-        alert("Something not entered correctly");
+        return "error";
       }
     }
       //runs intoKeys add keys together = nKey
@@ -55,17 +55,29 @@ window.onload = function() {
       // declare and call function to split string into 3 language scoring variables
       
      console.log("here is skey: " +sKey);
-      function keyStrip(theKey) {
+     //strips the key to single characters 
+     function keyStrip(theKey) {
         return aKey= [theKey.slice(2), theKey.slice(1,2), theKey.slice(0,1)];
       }
       keyStrip(sKey);
-      console.log(aKey);
-      //declare function to use key to get final string
+           //declare function to use key to get final string
 
-
+      //takes in single digit scores for each of 3 language possibilities
       function keyDecoder(cS,jS,pY){
         console.log("cS: "+ cS + "  jS: " +jS +"  pY: "+pY);  
-        if(pY > 3){
+        // check that all answers were submitted
+        let cSN = parseInt(cS);
+        let jSN = parseInt(jS);
+        let pYN = parseInt(pY);
+        let nTotal = cSN + jSN + pYN;
+        console.log (nTotal);
+        console.log (jS);
+
+        if(pY.length > 5 ){
+          return "Please select an answer for each question, or I can't tell you squat!"
+        }
+        
+          else if(pY > 3){
             return "Python, very confident";
           }
           else if(pY > 2){
@@ -81,7 +93,7 @@ window.onload = function() {
             return "Python, maybe, but you are well rounded";
           }
           else if (cS > 1){
-            return "You are going to have to figure it out for yourself";
+            return "C# or JavaScript, but not Python, that I'm sure it's not Python";
           }
           else if (jS > 1){
             return "JavaScript might work for you, but so would a nice vacation";
@@ -91,7 +103,7 @@ window.onload = function() {
         }
      }
    
-    
+  //run keyDecoder and output text to DOM  
   document.querySelector("p").innerText =keyDecoder(aKey[2],aKey[1],aKey[0]); //(keystrip(sKey));
   }
 }

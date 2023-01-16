@@ -6,39 +6,46 @@
   <title></title>
 </head>
 <body>
-  
+  <h1>What programming language is be suited for you?<br>
+  Please answer the questions below to guide you on your programming journey!</h1>
   <form>
     <!-- q1 -->
-    <h3>Would you say you are better at math or verbal skills?</h3>
-      <select id="q1" >
+    <label>Would you say you are better at math or verbal skills?</label>
+    <select id="q1" >
+        <option>-select-</option>
         <option>Math</option>
         <option>Verbal</option>
-      </select>
+      </select><br>
+      
     <!-- q2 -->
-    <h3>Do you like to talk a lot? Even when unnecassary?</h3>
+    <label>Do you like to talk a lot? Even when unnecessary?</label>
       <select id="q2" >
+        <option>-select-</option>
         <option>I sure do</option>
         <option>No, that's annoying</option>
-      </select>
+      </select><br>
     <!-- q3 -->
-    <h3>How do you feel about Bill gates?</h3>
+    <label>How do you feel about Bill gates?</label>
       <select id="q3" >
+        <option>-select-</option>
         <option>I love the guy, he's a saint</option>
         <option>I hate him, he's the devil</option>
-      </select>
+      </select><br>
     <!-- q4 -->
-    <h3>If you were a prisoner and had to choose one way to make your escape, what would it be?</h3>
+    <label>If you were a prisoner and had to choose one way to make your escape, what would it be?</label>
       <select id="q4" >
+        <option>-select-</option>
         <option>Build a bridge with sticks and nature to cross a ravine</option>
         <option>Act your way free with cunning and charisma</option>
-      </select>
+      </select><br>
     <!-- q5 -->
-    <h3>Do you like snakes?</h3>
+    <label>Do you like snakes?</label>
       <select id="q5" >
+        <option>-select-</option>
         <option>Yes</option>
         <option>No</option>
-      </select>
-      <button type="submit">Submit all answers</button>
+      </select><br>
+      <button type="submit" id="hidden">Submit all answers</button>
   </form>
   <p id ="output"></p>
 </body>

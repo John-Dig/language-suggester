@@ -1,0 +1,19 @@
+html{
+  background-color: bisque;
+}
+body{
+  font-size:1.25em;
+
+}
+
+label{
+}
+
+select{
+  margin:1em;
+  font-size:1em;
+
+}
+#hidden {
+  display: none;
+}
