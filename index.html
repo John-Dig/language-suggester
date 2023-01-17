@@ -6,11 +6,11 @@
   <title></title>
 </head>
 <body>
-  <h1>What programming language is be suited for you?<br>
-  Please answer the questions below to guide you on your programming journey!</h1>
+  <h1>What programming language is best suited for you?<h1>
+  <h2>Please answer the questions below to guide you on your programming journey!</h2><br>
   <form>
     <!-- q1 -->
-    <label>Would you say you are better at math or verbal skills?</label>
+    <label>Would you say you are better at math or verbal skills?</label><br>
     <select id="q1" >
         <option>-select-</option>
         <option>Math</option>
@@ -18,35 +18,37 @@
       </select><br>
       
     <!-- q2 -->
-    <label>Do you like to talk a lot? Even when unnecessary?</label>
-      <select id="q2" >
+    <label>Do you like to talk a lot? Even when unnecessary?</label><br>
+      <select name = "question 2" id="q2" >
         <option>-select-</option>
         <option>I sure do</option>
         <option>No, that's annoying</option>
       </select><br>
     <!-- q3 -->
-    <label>How do you feel about Bill gates?</label>
+    <label>How do you feel about Bill gates?</label><br>
       <select id="q3" >
         <option>-select-</option>
         <option>I love the guy, he's a saint</option>
         <option>I hate him, he's the devil</option>
       </select><br>
     <!-- q4 -->
-    <label>If you were a prisoner and had to choose one way to make your escape, what would it be?</label>
+    <label>If you were a prisoner and had to choose one way to make your escape, what would it be?</label><br>
       <select id="q4" >
         <option>-select-</option>
         <option>Build a bridge with sticks and nature to cross a ravine</option>
         <option>Act your way free with cunning and charisma</option>
       </select><br>
     <!-- q5 -->
-    <label>Do you like snakes?</label>
+    <label>Do you like snakes?</label><br>
       <select id="q5" >
         <option>-select-</option>
         <option>Yes</option>
         <option>No</option>
       </select><br>
-      <button type="submit">Submit all answers</button>
+    
   </form>
-  <p id ="output"></p>
+  <button id="button1" class="visible" type="click">Submit answers</button>
+  <p id ="output" class="hidden"></p>
+  <button id="button2" class="hidden" type="click">Click to try again</button>
 </body>
 </html>
